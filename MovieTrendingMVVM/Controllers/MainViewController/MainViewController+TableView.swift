@@ -12,12 +12,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func setupTableView() {
         customView.tableView.delegate = self
         customView.tableView.dataSource = self
-
-        self.registerCells()
     }
 
-    func registerCells() {
-        customView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.customView.tableView.reloadData()
+        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,10 +29,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier, for: indexPath) as? MovieTableViewCell else {
+            return UITableViewCell()
+        }
 
-        cell.textLabel?.text = "\(indexPath.row)"
+        let cellViewModel = cellDataSource[indexPath.row]
+        cell.setupCell(viewModel: cellViewModel)
+        cell.selectionStyle = .none
         return cell
+    }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        190
     }
 }

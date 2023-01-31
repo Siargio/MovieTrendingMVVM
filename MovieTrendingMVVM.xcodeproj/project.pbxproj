@@ -15,6 +15,13 @@
 		EC8A69B02987DF6000C62DA7 /* MainViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A69AF2987DF6000C62DA7 /* MainViewController+TableView.swift */; };
 		EC8A69B22987E68300C62DA7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A69B12987E68300C62DA7 /* MainViewModel.swift */; };
 		EC8A69B42988161A00C62DA7 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A69B32988161A00C62DA7 /* NetworkConstant.swift */; };
+		EC8A69B62988198A00C62DA7 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A69B52988198A00C62DA7 /* APICaller.swift */; };
+		EC8A69B829881A3A00C62DA7 /* TrendingMoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A69B729881A3A00C62DA7 /* TrendingMoviesModel.swift */; };
+		EC8A69BA2988483C00C62DA7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A69B92988483C00C62DA7 /* Observable.swift */; };
+		EC8A69BD298856C500C62DA7 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A69BC298856C500C62DA7 /* MovieTableViewCell.swift */; };
+		EC8A69C129885F1A00C62DA7 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A69C029885F1A00C62DA7 /* UIViewExtensions.swift */; };
+		EC8A69C32988616300C62DA7 /* MovieTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A69C22988616300C62DA7 /* MovieTableCellViewModel.swift */; };
+		EC8A69C62988648700C62DA7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = EC8A69C52988648700C62DA7 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,12 @@
 		EC8A69AF2987DF6000C62DA7 /* MainViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableView.swift"; sourceTree = "<group>"; };
 		EC8A69B12987E68300C62DA7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EC8A69B32988161A00C62DA7 /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
+		EC8A69B52988198A00C62DA7 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		EC8A69B729881A3A00C62DA7 /* TrendingMoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMoviesModel.swift; sourceTree = "<group>"; };
+		EC8A69B92988483C00C62DA7 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		EC8A69BC298856C500C62DA7 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		EC8A69C029885F1A00C62DA7 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		EC8A69C22988616300C62DA7 /* MovieTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC8A69C62988648700C62DA7 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,13 +74,13 @@
 		EC8A698E2987C05B00C62DA7 /* MovieTrendingMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				EC8A69AA2987D52900C62DA7 /* Classes */,
 				EC8A69AC2987D55400C62DA7 /* Networking */,
 				EC8A69AB2987D53E00C62DA7 /* Extensions */,
-				EC8A69AA2987D52900C62DA7 /* Classes */,
 				EC8A69A92987D52300C62DA7 /* Model */,
+				EC8A69A62987D50500C62DA7 /* View */,
 				EC8A69A82987D51800C62DA7 /* Controllers */,
 				EC8A69A72987D50D00C62DA7 /* ViewModel */,
-				EC8A69A62987D50500C62DA7 /* View */,
 				EC8A69A42987C52C00C62DA7 /* App */,
 				EC8A69A32987C2CF00C62DA7 /* Resources */,
 			);
@@ -104,6 +118,7 @@
 		EC8A69A62987D50500C62DA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EC8A69BB2988566800C62DA7 /* MainMovieCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				EC8A69B12987E68300C62DA7 /* MainViewModel.swift */,
+				EC8A69C22988616300C62DA7 /* MovieTableCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -127,6 +143,7 @@
 		EC8A69A92987D52300C62DA7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EC8A69B729881A3A00C62DA7 /* TrendingMoviesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +151,7 @@
 		EC8A69AA2987D52900C62DA7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EC8A69B92988483C00C62DA7 /* Observable.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -141,6 +159,7 @@
 		EC8A69AB2987D53E00C62DA7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EC8A69C029885F1A00C62DA7 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -149,8 +168,17 @@
 			isa = PBXGroup;
 			children = (
 				EC8A69B32988161A00C62DA7 /* NetworkConstant.swift */,
+				EC8A69B52988198A00C62DA7 /* APICaller.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		EC8A69BB2988566800C62DA7 /* MainMovieCell */ = {
+			isa = PBXGroup;
+			children = (
+				EC8A69BC298856C500C62DA7 /* MovieTableViewCell.swift */,
+			);
+			path = MainMovieCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +197,9 @@
 			dependencies = (
 			);
 			name = MovieTrendingMVVM;
+			packageProductDependencies = (
+				EC8A69C52988648700C62DA7 /* SDWebImage */,
+			);
 			productName = MovieTrendingMVVM;
 			productReference = EC8A698C2987C05B00C62DA7 /* MovieTrendingMVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +228,9 @@
 				Base,
 			);
 			mainGroup = EC8A69832987C05B00C62DA7;
+			packageReferences = (
+				EC8A69C42988648700C62DA7 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = EC8A698D2987C05B00C62DA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,9 +260,15 @@
 				EC8A69B22987E68300C62DA7 /* MainViewModel.swift in Sources */,
 				EC8A69942987C05B00C62DA7 /* MainViewController.swift in Sources */,
 				EC8A69AE2987DDCE00C62DA7 /* MainView.swift in Sources */,
+				EC8A69B62988198A00C62DA7 /* APICaller.swift in Sources */,
+				EC8A69BA2988483C00C62DA7 /* Observable.swift in Sources */,
+				EC8A69C32988616300C62DA7 /* MovieTableCellViewModel.swift in Sources */,
+				EC8A69BD298856C500C62DA7 /* MovieTableViewCell.swift in Sources */,
 				EC8A69902987C05B00C62DA7 /* AppDelegate.swift in Sources */,
 				EC8A69B42988161A00C62DA7 /* NetworkConstant.swift in Sources */,
 				EC8A69B02987DF6000C62DA7 /* MainViewController+TableView.swift in Sources */,
+				EC8A69C129885F1A00C62DA7 /* UIViewExtensions.swift in Sources */,
+				EC8A69B829881A3A00C62DA7 /* TrendingMoviesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +486,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC8A69C42988648700C62DA7 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC8A69C52988648700C62DA7 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC8A69C42988648700C62DA7 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC8A69842987C05B00C62DA7 /* Project object */;
 }
