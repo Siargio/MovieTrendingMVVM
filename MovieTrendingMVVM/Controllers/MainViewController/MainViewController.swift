@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -36,8 +36,8 @@ class MainViewController: UIViewController {
     
     // MARK: - Setup
 
-    func configView() {
-        title = "Top Trending Movies"
+    final func configView() {
+        title = Strings.title
         view.backgroundColor = .systemBackground
         
         setupTableView()
@@ -67,5 +67,25 @@ class MainViewController: UIViewController {
             self.cellDataSource = movies
             self.customView.tableView.reloadData()
         }
+    }
+
+    func openDetail(movieId: Int) {
+        guard let movie = viewModel.retriveMovie(withId: movieId) else {
+            return
+        }
+
+        DispatchQueue.main.async {
+            let detailsViewModel = DetailMovieViewModel(movie: movie)
+            let detailsController = DetailsMovieViewController(viewModel: detailsViewModel)
+            self.navigationController?.pushViewController(detailsController, animated: true)
+        }
+    }
+}
+
+// MARK: - Extension
+
+extension MainViewController {
+    enum Strings {
+        static let title = "Top Trending Movies"
     }
 }
