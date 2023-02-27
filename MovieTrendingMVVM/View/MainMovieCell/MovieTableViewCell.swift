@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class MovieTableViewCell: UITableViewCell {
+final class MovieTableViewCell: UITableViewCell {
 
     // MARK: - Properties
     
@@ -34,21 +34,21 @@ class MovieTableViewCell: UITableViewCell {
     let nameMovieLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 18)
+        label.font = .systemFont(ofSize: Metric.sizeNameMovieLabel)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     let dataLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17)
+        label.font = .systemFont(ofSize: Metric.sizeNameDataLabel)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     let ratingLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: Metric.sizeNameRatingLabel)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -87,27 +87,43 @@ class MovieTableViewCell: UITableViewCell {
 
     func setupLayout() {
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            containerView.topAnchor.constraint(equalTo: topAnchor, constant: Metric.topBottom),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metric.LeftRight),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Metric.topBottom),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metric.LeftRight),
 
-            imageViewCell.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 6),
-            imageViewCell.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 6),
-            imageViewCell.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -6),
-            imageViewCell.widthAnchor.constraint(equalToConstant: 110),
+            imageViewCell.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Metric.trailingLeadingBottomTop),
+            imageViewCell.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Metric.trailingLeadingBottomTop),
+            imageViewCell.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Metric.trailingLeadingBottomTop),
+            imageViewCell.widthAnchor.constraint(equalTo: widthAnchor, multiplier: Metric.imageWidth),
 
-            nameMovieLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 6),
-            nameMovieLabel.leadingAnchor.constraint(equalTo: imageViewCell.trailingAnchor, constant: 10),
-            nameMovieLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -6),
+            nameMovieLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Metric.trailingLeadingBottomTop),
+            nameMovieLabel.leadingAnchor.constraint(equalTo: imageViewCell.trailingAnchor, constant: Metric.trailing),
+            nameMovieLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Metric.trailingLeadingBottomTop),
 
-            ratingLabel.leadingAnchor.constraint(equalTo: imageViewCell.trailingAnchor, constant: 10),
-            ratingLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -6),
-            ratingLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -6),
+            ratingLabel.leadingAnchor.constraint(equalTo: imageViewCell.trailingAnchor, constant: Metric.trailing),
+            ratingLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Metric.trailingLeadingBottomTop),
+            ratingLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Metric.trailingLeadingBottomTop),
 
-            dataLabel.leadingAnchor.constraint(equalTo: imageViewCell.trailingAnchor, constant: 10),
-            dataLabel.bottomAnchor.constraint(equalTo: ratingLabel.topAnchor, constant: -5),
-            dataLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -6)
+            dataLabel.leadingAnchor.constraint(equalTo: imageViewCell.trailingAnchor, constant: Metric.trailing),
+            dataLabel.bottomAnchor.constraint(equalTo: ratingLabel.topAnchor, constant: -Metric.topBottom),
+            dataLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Metric.trailingLeadingBottomTop)
         ])
     }
  }
+
+// MARK: - Extension
+
+extension MovieTableViewCell {
+    enum Metric {
+        static let LeftRight: CGFloat = 20
+        static let topBottom: CGFloat = 5
+        static let imageWidth: CGFloat = 0.27
+        static let trailing: CGFloat = 10
+        static let trailingLeadingBottomTop: CGFloat = 6
+
+        static let sizeNameMovieLabel: CGFloat = 18
+        static let sizeNameDataLabel: CGFloat = 17
+        static let sizeNameRatingLabel: CGFloat = 15
+    }
+}

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainView: UIView {
+final class MainView: UIView {
 
     // MARK: - UIElements
 
@@ -42,12 +42,12 @@ class MainView: UIView {
 
     // MARK: - Setup
 
-    func addSubviews() {
+    private func addSubviews() {
         addSubview(tableView)
         addSubview(activityIndicator)
     }
 
-    func setupLayout() {
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: topAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
