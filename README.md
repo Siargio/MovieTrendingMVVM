@@ -1,7 +1,8 @@
 # MovieTrendingMVVM
 
 ## UIKit
-## MVVM
+
+- UIKit - MVVM+C - URL - CollectionView
 
 
 
