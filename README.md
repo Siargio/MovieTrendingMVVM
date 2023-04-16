@@ -2,7 +2,7 @@
 
 ## UIKit
 
-- UIKit - MVVM+C - URL - CollectionView
+- UIKit - MVVM - URL - TableView
 
 
 
